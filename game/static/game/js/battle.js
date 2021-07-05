@@ -76,9 +76,12 @@ function show_result(){
     for(i=0; i < els_to_hide.length; i++){
         if(els_to_hide[i]){ els_to_hide[i].classList.add('not-active')}
     }
-    console.log(who_wins)
     btn_alert.style.color = "green"
-    string_winner = Object.keys(who_wins) != "draw" ? `The Winner is ${Object.keys(who_wins)} with ${Object.values(who_wins)}` : "The result is a Draw!"
+    for(i=0; i < Object.values(who_wins).length; i++){
+        players = Object.values(who_wins)[0]
+        winner = Object.values(who_wins)[1]
+    }
+    string_winner = `The Winner is ${Object.keys(winner)}, <br><br> The players: ${Object.keys(players)[0]} => ${Object.values(players)[0]}, ${Object.keys(players)[1]} => ${Object.values(players)[1]} `
     btn_alert.innerHTML = string_winner
 }
 

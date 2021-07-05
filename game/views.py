@@ -24,7 +24,10 @@ def battle(request, who):
                 ai_2 = Ai()
                 game_data[ai_2.name+'2'] = ai_2.move
             game = Game(game_data)
-            content = game.who_wins()
+            content = {
+                "players": game_data,
+                "winner": game.who_wins()
+            }
         else:
-            raise Exception
+            raise ValueError('The Key sent is not allowed')
         return HttpResponse(json.dumps(content), status=200, content_type="application/json")
