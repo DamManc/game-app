@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock paper scissors</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'game/css/style.css' %}">
+  </head>
+  <body>
+   <header>
+      <h1 class="header-title">Rock paper scissors</h1>
+    </header>
+    <div class="main">{% csrf_token %}
+        {% if who == 'human' %}
+        <div class="main-btn human-view">
+            <img class= "human-img" src="{% static 'game/images/people.png' %}" alt="human">
+            <div class="game-choice btn-scissors">SCISSORS</div>
+            <div class="game-choice btn-paper">PAPER</div>
+            <div class="game-choice btn-rock">ROCK</div>
+        </div>
+        {% elif who == 'computer' %}
+        <div class="main-btn ai-view-one">
+            <img class= "ai-img" src="{% static 'game/images/AI_2.png' %}" alt="AI">
+        </div>
+        {% endif %}
+        <p class="alert-btn">{% if who == 'human' %}Click on one Human-element to fight against the AI{% elif who == 'computer' %}Attend the choices of AI..{% endif %}</p>
+        <div class="main-btn game-battle">BATTLE</div>
+        <div class="main-btn ai-view-two">
+            <img class= "ai-img" src="{% static 'game/images/AI.png' %}" alt="AI">
+        </div>
+        <div class="main-btn-options">
+            <div class="main-btn-return"><a href="/">Return</a></div>
+            <div class="main-btn-another not-active">Another game?</div>
+        </div>
+    </div>
+    <script src="{% static 'game/js/battle.js' %}"></script>
+    <script src="{% static 'game/js/home.js' %}"></script>
+    <footer>
+    </footer>
+  </body>
+</html>
+
+
+
