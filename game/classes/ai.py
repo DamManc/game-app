@@ -11,5 +11,5 @@ class Ai:
 
     @staticmethod
     def calc_rand_move():
-        move = random.choice(Rules.entities)
+        move = random.choice(Rules().entities)
         return move
