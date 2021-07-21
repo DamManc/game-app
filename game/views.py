@@ -2,8 +2,8 @@ import json
 
 from django.http import HttpResponse
 from django.shortcuts import render
-from game.classes.game import Game
-from game.classes.ai import Ai
+from src.game import Game
+from src.ai import Ai
 
 
 def home(request):
